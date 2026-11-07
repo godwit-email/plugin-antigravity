@@ -1,0 +1,11 @@
+{
+  "name": "antigravity",
+  "version": "0.1.0",
+  "description": {
+    "default": "Use Gemini through your Google Antigravity sign-in. Unofficial: it may breach Antigravity's terms, and Google stores mail sent to it.",
+    "zh-Hans": "用 Google Antigravity 登录使用 Gemini。非官方：可能违反 Antigravity 条款，发送给它的邮件会被 Google 存储。"
+  },
+  "native": { "abi": 1, "idle": 120 },
+  "capabilities": ["models", "login"],
+  "config": []
+}
