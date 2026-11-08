@@ -2,7 +2,7 @@
 
 Use Gemini through a Google Antigravity sign-in, as a native Godwit plugin. The design and its risks are in Godwit's [ADR 0033](https://github.com/godwit-email/godwit/blob/main/docs/adr/0033-antigravity-native-plugin-and-plugin-login.md).
 
-**Read this first.** Antigravity's [terms](https://antigravity.google/terms) forbid reaching the service through third-party software, and Google can suspend your Antigravity and Gemini CLI access for it. Google stores what you send, and its reviewers may read it: here, that is your mail. A Gemini API key under Godwit's model settings is the supported way. This plugin is not in Godwit's plugin directory, on purpose.
+**Read this first.** Antigravity's [terms](https://antigravity.google/terms) forbid reaching the service through third-party software, and Google can suspend your Antigravity and Gemini CLI access for it. Google stores what you send, and its reviewers may read it: here, that is your mail. A Gemini API key under Godwit's model settings is the supported way. Godwit's plugin directory lists it with this warning; it needs Godwit 1.30.0 or later.
 
 macOS only: elsewhere Google's server keeps its token in a plain file.
 
@@ -14,13 +14,17 @@ macOS only: elsewhere Google's server keeps its token in a plain file.
 - The server's copies of each session are deleted after the turn, since they hold mail.
 - The token stays in the macOS keychain, where Google's server keeps it. The plugin never reads it.
 
-## Build
+## Build from source
 
 ```bash
 python3 scripts/package.py
 ```
 
 Then in Godwit: Settings → Extensions → install from a folder, and pick `dist/antigravity`.
+
+## Releasing
+
+Bump `version` in `plugin.json`, merge, and push the tag `v<version>`. CI tests, builds both macOS libraries and publishes them as a GitHub release. Then add the release, with each file's URL, size and SHA-256, to `godwit-plugin.json` (keep the older releases), and open a pull request in `godwit-email/plugins` that points the entry's `source.sha` at that commit.
 
 ## Before changing the server version
 
