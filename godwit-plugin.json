@@ -1,0 +1,38 @@
+{
+  "name": "antigravity",
+  "releases": [
+    {
+      "version": "0.1.0",
+      "minGodwit": "1.30.0",
+      "manifest": {
+        "name": "antigravity",
+        "version": "0.1.0",
+        "description": {
+          "default": "Use Gemini through your Google Antigravity sign-in. Unofficial: it may breach Antigravity's terms, and Google stores mail sent to it.",
+          "zh-Hans": "用 Google Antigravity 登录使用 Gemini。非官方：可能违反 Antigravity 条款，发送给它的邮件会被 Google 存储。"
+        },
+        "native": {
+          "abi": 1,
+          "idle": 120
+        },
+        "capabilities": [
+          "models",
+          "login"
+        ],
+        "config": []
+      },
+      "artifacts": {
+        "darwin-arm64": {
+          "url": "https://github.com/godwit-email/plugin-antigravity/releases/download/v0.1.0/antigravity-darwin-arm64.dylib",
+          "sha256": "eb7f264cb15610c2a583f86283c4bd0eec36b39c2ad976add83436542b93972f",
+          "size": 7387746
+        },
+        "darwin-amd64": {
+          "url": "https://github.com/godwit-email/plugin-antigravity/releases/download/v0.1.0/antigravity-darwin-amd64.dylib",
+          "sha256": "1b0350fade69b118f56d30d9bd9272948c45595bb67d6082539c24d34df7cab7",
+          "size": 7961832
+        }
+      }
+    }
+  ]
+}
